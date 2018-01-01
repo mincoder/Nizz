@@ -1,6 +1,7 @@
 package nizz.core;
 
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
@@ -34,8 +35,7 @@ public class Textures {
 			GL11.glTexParameteri(3553, 10241, mode);
 			GL11.glTexParameteri(3553, 10240, mode);
 
-			BufferedImage img = ImageIO.read(Textures.class
-					.getResourceAsStream(resourceName));
+			BufferedImage img = ImageIO.read(new FileInputStream(resourceName));
 			int w = img.getWidth();
 			int h = img.getHeight();
 

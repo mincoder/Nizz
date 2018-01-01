@@ -13,8 +13,7 @@ public class Chunk {
 	public final int z1;
 	private boolean dirty = true;
 	private int lists = -1;
-	private static int texture = nizz.core.Textures.loadTexture("/terrain.png",
-			9728);
+	private static int texture = nizz.core.Textures.loadTexture("terrain.png",9728);
 
 	private static Tesselator t = new Tesselator();
 

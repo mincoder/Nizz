@@ -1,5 +1,7 @@
 package nizz.core;
 
+import org.lwjgl.input.Keyboard;
+
 import nizz.physics.AABB;
 
 public class Player {
@@ -55,21 +57,21 @@ public class Player {
 		float xa = 0.0F;
 		float ya = 0.0F;
 
-		if (org.lwjgl.input.Keyboard.isKeyDown(19)) {
+		if (Keyboard.isKeyDown(Keyboard.KEY_Y)) {
 			resetPos();
 		}
-		if ((org.lwjgl.input.Keyboard.isKeyDown(200))
-				|| (org.lwjgl.input.Keyboard.isKeyDown(17)))
-			ya -= 1.0F;
-		if ((org.lwjgl.input.Keyboard.isKeyDown(208))
-				|| (org.lwjgl.input.Keyboard.isKeyDown(31)))
-			ya += 1.0F;
+		if ((Keyboard.isKeyDown(Keyboard.KEY_LEFT))
+				|| (org.lwjgl.input.Keyboard.isKeyDown(Keyboard.KEY_A)))
+			ya -= 3.0F;
+		if ((org.lwjgl.input.Keyboard.isKeyDown(Keyboard.KEY_D))
+				|| (org.lwjgl.input.Keyboard.isKeyDown(Keyboard.KEY_RIGHT)))
+			ya += 3.0F;
 		if ((org.lwjgl.input.Keyboard.isKeyDown(203))
 				|| (org.lwjgl.input.Keyboard.isKeyDown(30)))
-			xa -= 1.0F;
+			xa -= 3.0F;
 		if ((org.lwjgl.input.Keyboard.isKeyDown(205))
 				|| (org.lwjgl.input.Keyboard.isKeyDown(32)))
-			xa += 1.0F;
+			xa += 3.0F;
 		if ((org.lwjgl.input.Keyboard.isKeyDown(57))
 				|| (org.lwjgl.input.Keyboard.isKeyDown(219))) {
 			if (onGround) {
@@ -78,7 +80,7 @@ public class Player {
 		}
 
 		moveRelative(xa, ya, onGround ? 0.02F : 0.005F);
-
+		
 		yd = ((float) (yd - 0.005D));
 		move(xd, yd, zd);
 		xd *= 0.91F;

@@ -39,8 +39,7 @@ public class LevelRenderer implements LevelListener {
 						y1 = level.depth;
 					if (z1 > level.height)
 						z1 = level.height;
-					chunks[((x + y * xChunks) * zChunks + z)] = new Chunk(
-							level, x0, y0, z0, x1, y1, z1);
+					chunks[((x + y * xChunks) * zChunks + z)] = new Chunk(level, x0, y0, z0, x1, y1, z1);
 				}
 		}
 	}
